@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <computer_group>
-    <name>Mann Consulting - Check-in Failure = Fail</name>
+    <name>JMF Deploy - Check-in Failure = Fail</name>
     <is_smart>true</is_smart>
     <criteria>
       <size>3</size>
@@ -9,7 +9,7 @@
         <priority>0</priority>
         <and_or>and</and_or>
         <search_type>more than x days ago</search_type>
-        <value>14</value>
+        <value>30</value>
         <opening_paren>false</opening_paren>
         <closing_paren>false</closing_paren>
       </criterion>

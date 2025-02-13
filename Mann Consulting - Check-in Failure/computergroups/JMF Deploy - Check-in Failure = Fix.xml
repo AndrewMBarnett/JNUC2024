@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <computer_group>
-    <name>Mann Consulting - Employee Is Active = Fail</name>
+    <name>JMF Deploy - Check-in Failure = Fix</name>
     <is_smart>true</is_smart>
     <criteria>
-      <size>3</size>
+      <size>1</size>
       <criterion>
-        <name>Mann Consulting - Employee Is Active</name>
+        <name>Profile Name</name>
         <priority>0</priority>
         <and_or>and</and_or>
-        <search_type>more than</search_type>
-        <value>7</value>
+        <search_type>has</search_type>
+        <value>JMF Deploy - Check-in Failure Test</value>
         <opening_paren>false</opening_paren>
         <closing_paren>false</closing_paren>
       </criterion>
@@ -17,8 +17,8 @@
         <name>Last Check-in</name>
         <priority>1</priority>
         <and_or>and</and_or>
-        <search_type>less than x days ago</search_type>
-        <value>14</value>
+        <search_type>more than x days ago</search_type>
+        <value>30</value>
         <opening_paren>false</opening_paren>
         <closing_paren>false</closing_paren>
       </criterion>

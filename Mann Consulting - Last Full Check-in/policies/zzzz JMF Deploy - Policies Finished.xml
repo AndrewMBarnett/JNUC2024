@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <policy>
     <general>
-      <name>zzzz Mann Consulting - Policies Finished</name>
+      <name>zzzz JMF Deploy - Policies Finished</name>
       <enabled>true</enabled>
       <trigger_checkin>true</trigger_checkin>
       <trigger_enrollment_complete>false</trigger_enrollment_complete>
@@ -18,7 +18,7 @@
       <target_drive>/</target_drive>
       <offline>false</offline>
       <category>
-        <name>Mann Consulting</name>
+        <name>JMF Deploy</name>
       </category>
       <network_limitations>
         <minimum_network_connection>No Minimum</minimum_network_connection>

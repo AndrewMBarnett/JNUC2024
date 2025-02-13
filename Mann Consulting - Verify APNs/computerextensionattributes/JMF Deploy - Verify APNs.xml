@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <computer_extension_attribute>
-    <name>Mann Consulting - Verify APNs</name>
+    <name>JMF Deploy - Verify APNs</name>
     <enabled>true</enabled>
-    <description>This script is part of Mann Consulting's Jamf Pro Workflows and has been distributed to the public as part of our JNUC 2024 presentation. It is freely available for use by the community under the condition that it is provided “as is,” without any form of support, warranty, or guarantee of functionality, security, or fitness for any specific purpose. Mann Consulting disclaims any and all liability for any damages, losses, or legal claims arising from the use, misuse, or inability to use this script. Users assume full responsibility for testing, deploying, and managing this script in their own environments. For updates or support options, please visit https://mann.com/jamf or contact us at support@mann.com.</description>
+    <description></description>
     <data_type>date</data_type>
     <input_type>
       <type>script</type>
       <platform>Mac</platform>
       <script>#!/bin/zsh
         ###############################################################################
-        # Name:     Mann Consulting - Verify APNs
-        # Creator:  Mann Consulting
+        # Name:     JMFDeploy Consulting - Verify APNs
+        # Creator:  JMFDeploy Consulting
         # Summary:  Extension Attribute to detect if APNs is working correctly.
         ##
         # Usage:    Install as a date based Extension Attribute
@@ -22,11 +22,11 @@
         #           2000-01-01 00:00:04 - Client identity certificate expired from from /Library/Keychains/System.keychain - The computer must be re-enrolled manually.
         #
         #
-        # Notice:   This script is part of Mann Consulting's Jamf Pro Workflows and has been distributed to the public as part of our JNUC 2024 presentation.
+        # Notice:   This script is part of JMFDeploy Consulting's Jamf Pro Workflows and has been distributed to the public as part of our JNUC 2024 presentation.
         #           It is freely available for use by the community under the condition that it is provided “as is,” without any form of support, warranty, or guarantee of functionality, security, or fitness for any specific purpose.
-        #           Mann Consulting disclaims any and all liability for any damages, losses, or legal claims arising from the use, misuse, or inability to use this script. Users assume full responsibility for testing, deploying, and managing this script in their own environments.
+        #           JMFDeploy Consulting disclaims any and all liability for any damages, losses, or legal claims arising from the use, misuse, or inability to use this script. Users assume full responsibility for testing, deploying, and managing this script in their own environments.
         #
-        #           For updates or support options, please visit https://mann.com/jamf or contact us at support@mann.com.
+        #           For updates or support options, please visit https://JMFDeploy.com/jamf or contact us at support@JMFDeploy.com.
         #
         ###############################################################################
 
@@ -107,13 +107,13 @@
         mdmSuccessfulCommunication=$(waitALongPeriodicallyTime $delay_1 $delay_2 $delay_3 $delay_4 $delay_5)
 
         if ! date -jf "%Y-%m-%d %H:%M:%S" "$mdmSuccessfulCommunication" +%s &amp;&gt;/dev/null; then
-          mdmSuccessfulCommunication=$(defaults read "/Library/Application Support/Mann/Timers/com.mann.cis.mdmapns.plist" LastConnected) 2&gt;/dev/null
+          mdmSuccessfulCommunication=$(defaults read "/Library/Application Support/JMFDeploy/Timers/com.JMFDeploy.cis.mdmapns.plist" LastConnected) 2&gt;/dev/null
         fi
 
         if date -jf "%Y-%m-%d %H:%M:%S" "$mdmSuccessfulCommunication" +%s &amp;&gt;/dev/null; then
           echo "&lt;result&gt;$mdmSuccessfulCommunication&lt;/result&gt;"
-          mkdir -p "/Library/Application Support/Mann/Timers"
-          defaults write "/Library/Application Support/Mann/Timers/com.mann.cis.mdmapns.plist" LastConnected "$mdmSuccessfulCommunication"
+          mkdir -p "/Library/Application Support/JMFDeploy/Timers"
+          defaults write "/Library/Application Support/JMFDeploy/Timers/com.JMFDeploy.cis.mdmapns.plist" LastConnected "$mdmSuccessfulCommunication"
           exit
         fi
 

@@ -1,7 +1,7 @@
 #!/bin/zsh
 ###############################################################################
-# Name:     Mann Consulting - Verify APNs
-# Creator:  Mann Consulting
+# Name:     JMFDeploy Consulting - Verify APNs
+# Creator:  JMFDeploy Consulting
 # Summary:  Extension Attribute to detect if APNs is working correctly.
 ##
 # Usage:    Install as a date based Extension Attribute
@@ -12,12 +12,12 @@
 #           2000-01-01 00:00:03 - Client identity certificate missing from /Library/Keychains/System.keychain - The computer must be re-enrolled manually.
 #           2000-01-01 00:00:04 - Client identity certificate expired from from /Library/Keychains/System.keychain - The computer must be re-enrolled manually.
 #
-# Note:     This script is part of Mann Consulting's Jamf Pro Workflows subscription and is only
+# Note:     This script is part of JMFDeploy Consulting's Jamf Pro Workflows subscription and is only
 #           authorized for use for current subscribers.  It has been distributed to the public as part of our JNUC 2024 session.
-#           This script and workflow comes with no support, warranty or guarantee. Use at your own risk, Mann Consulting is
+#           This script and workflow comes with no support, warranty or guarantee. Use at your own risk, JMFDeploy Consulting is
 #           not liable for any issues that are caused by this script.
 #
-#           If you'd like updates or support sign up at https://mann.com/jamf or email support@mann.com for more details
+#           If you'd like updates or support sign up at https://JMFDeploy.com/jamf or email support@JMFDeploy.com for more details
 ###############################################################################
 
 enrolledState=$(/usr/bin/profiles status -type enrollment | grep "MDM enrollment" | cut -d ' ' -f3)
@@ -97,13 +97,13 @@ delay_5=$(( $now - (3600 * 24 * 14) ))
 mdmSuccessfulCommunication=$(waitALongPeriodicallyTime $delay_1 $delay_2 $delay_3 $delay_4 $delay_5)
 
 if ! date -jf "%Y-%m-%d %H:%M:%S" "$mdmSuccessfulCommunication" +%s &>/dev/null; then
-  mdmSuccessfulCommunication=$(defaults read "/Library/Application Support/Mann/Timers/com.mann.cis.mdmapns.plist" LastConnected) 2>/dev/null
+  mdmSuccessfulCommunication=$(defaults read "/Library/Application Support/JMFDeploy/Timers/com.JMFDeploy.cis.mdmapns.plist" LastConnected) 2>/dev/null
 fi
 
 if date -jf "%Y-%m-%d %H:%M:%S" "$mdmSuccessfulCommunication" +%s &>/dev/null; then
   echo "<result>$mdmSuccessfulCommunication</result>"
-  mkdir -p "/Library/Application Support/Mann/Timers"
-  defaults write "/Library/Application Support/Mann/Timers/com.mann.cis.mdmapns.plist" LastConnected "$mdmSuccessfulCommunication"
+  mkdir -p "/Library/Application Support/JMFDeploy/Timers"
+  defaults write "/Library/Application Support/JMFDeploy/Timers/com.JMFDeploy.cis.mdmapns.plist" LastConnected "$mdmSuccessfulCommunication"
   exit
 fi
 

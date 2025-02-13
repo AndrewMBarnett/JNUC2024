@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <computer_group>
-    <name>Mann Consulting - Verify APNs = Fail</name>
+    <name>JMF Deploy - Verify APNs = Fail</name>
     <is_smart>true</is_smart>
     <criteria>
       <size>3</size>
       <criterion>
-        <name>Mann Consulting - Verify APNs</name>
+        <name>JMF Deploy - Verify APNs</name>
         <priority>0</priority>
         <and_or>and</and_or>
         <search_type>more than x days ago</search_type>

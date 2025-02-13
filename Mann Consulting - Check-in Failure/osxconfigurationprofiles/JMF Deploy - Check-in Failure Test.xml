@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <os_x_configuration_profile>
     <general>
-      <name>Mann Consulting - Check-in Failure Test</name>
-      <description>This script is part of Mann Consulting's Jamf Pro Workflows and has been distributed to the public as part of our JNUC 2024 presentation.
-It is freely available for use by the community under the condition that it is provided “as is,” without any form of support, warranty, or guarantee of functionality, security, or fitness for any specific purpose.
-Mann Consulting disclaims any and all liability for any damages, losses, or legal claims arising from the use, misuse, or inability to use this script. Users assume full responsibility for testing, deploying, and managing this script in their own environments.</description>
+      <name>JMF Deploy - Check-in Failure Test</name>
+      <description>This script is part of JMF Deploy's Jamf Pro Workflows.</description>
       <category>
-        <name>Mann Consulting</name>
+        <name>JMF Deploy</name>
       </category>
       <distribution_method>Install Automatically</distribution_method>
       <user_removable>false</user_removable>
@@ -22,9 +20,9 @@ Mann Consulting disclaims any and all liability for any damages, losses, or lega
             &lt;key&gt;PayloadType&lt;/key&gt;
             &lt;string&gt;Configuration&lt;/string&gt;
             &lt;key&gt;PayloadOrganization&lt;/key&gt;
-            &lt;string&gt;Mann Consulting&lt;/string&gt;
+            &lt;string&gt;JMF Deploy&lt;/string&gt;
             &lt;key&gt;PayloadIdentifier&lt;/key&gt;
-            &lt;string&gt;com.mann.jnuc2024repaircommunications.binary&lt;/string&gt;
+            &lt;string&gt;com.JMFDeploy.repaircommunications.binary&lt;/string&gt;
             &lt;key&gt;PayloadDisplayName&lt;/key&gt;
             &lt;string&gt;Jamf Client Communications Repair Binary&lt;/string&gt;
             &lt;key&gt;PayloadDescription&lt;/key&gt;
@@ -41,9 +39,9 @@ Mann Consulting disclaims any and all liability for any damages, losses, or lega
                 &lt;key&gt;PayloadDisplayName&lt;/key&gt;
                 &lt;string&gt;Custom Settings&lt;/string&gt;
                 &lt;key&gt;PayloadIdentifier&lt;/key&gt;
-                &lt;string&gt;com.mann.jnuc2024.repaircommunications.binary.ManagedClient&lt;/string&gt;
+                &lt;string&gt;com.JMFDeploy.jnuc2024.repaircommunications.binary.ManagedClient&lt;/string&gt;
                 &lt;key&gt;PayloadOrganization&lt;/key&gt;
-                &lt;string&gt;Mann Consulting&lt;/string&gt;
+                &lt;string&gt;JMF Deploy&lt;/string&gt;
                 &lt;key&gt;PayloadType&lt;/key&gt;
                 &lt;string&gt;com.apple.ManagedClient.preferences&lt;/string&gt;
                 &lt;key&gt;PayloadUUID&lt;/key&gt;
@@ -52,7 +50,7 @@ Mann Consulting disclaims any and all liability for any damages, losses, or lega
                 &lt;integer&gt;1&lt;/integer&gt;
                 &lt;key&gt;PayloadContent&lt;/key&gt;
                 &lt;dict&gt;
-                  &lt;key&gt;com.mann.repaircommunications&lt;/key&gt;
+                  &lt;key&gt;com.JMF Deploy.repaircommunications&lt;/key&gt;
                   &lt;dict&gt;
                     &lt;key&gt;Forced&lt;/key&gt;
                     &lt;array&gt;
@@ -80,7 +78,7 @@ Mann Consulting disclaims any and all liability for any damages, losses, or lega
       <departments/>
       <computer_groups>
         <computer_group>
-          <name>Mann Consulting - Check-in Failure = Fail</name>
+          <name>JMF Deploy - Check-in Failure = Fail</name>
         </computer_group>
       </computer_groups>
       <jss_users/>
@@ -105,7 +103,7 @@ Mann Consulting disclaims any and all liability for any damages, losses, or lega
       </exclusions>
     </scope>
     <self_service>
-      <self_service_display_name>Mann Consulting - Check-in Failure Test</self_service_display_name>
+      <self_service_display_name>JMF Deploy - Check-in Failure Test</self_service_display_name>
       <install_button_text>Install</install_button_text>
       <self_service_description/>
       <force_users_to_view_description>false</force_users_to_view_description>
@@ -116,7 +114,7 @@ Mann Consulting disclaims any and all liability for any damages, losses, or lega
       <feature_on_main_page>false</feature_on_main_page>
       <self_service_categories>
         <category>
-          <name>Mann Consulting</name>
+          <name>JMF Deploy</name>
           <display_in>true</display_in>
         </category>
       </self_service_categories>
